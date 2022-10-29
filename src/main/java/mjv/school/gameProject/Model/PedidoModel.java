@@ -9,11 +9,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "tab_pedido")
-public class Pedido {
+public class PedidoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(name = "data_compra", nullable = false)
     private LocalDate dataCompra;
 
@@ -24,8 +24,8 @@ public class Pedido {
     private Double valorTotalCompra;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "item_pedido_id")
-    private  List<PedidoItem> listaPedidoItem = new ArrayList<>();
+    @JoinColumn(name = "produto_id")
+    private  List<ProdutoModel> listaProduto = new ArrayList<>();
 
     public long getId() {
         return id;
@@ -59,11 +59,11 @@ public class Pedido {
         this.statusPedido = statusPedido;
     }
 
-    public List<PedidoItem> getListaPedidoItem() {
-        return listaPedidoItem;
+    public List<ProdutoModel> getListaProduto() {
+        return listaProduto;
     }
 
-    public void setListaPedidoItem(List<PedidoItem> listaPedidoItem) {
-        this.listaPedidoItem = listaPedidoItem;
+    public void setListaProduto(List<ProdutoModel> listaProduto) {
+        this.listaProduto = listaProduto;
     }
 }

@@ -4,19 +4,21 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "tab_produto")
-public class Produto {
+public class ProdutoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(name = "nome", length = 50, nullable = false)
     private String nome;
     @Column(name = "descricao", length = 125, nullable = false)
     private String descricao;
 
-    @Column(name = "preco", nullable = false)
-    private Double preco;
+    @Column(name = "valor", nullable = false)
+    private Double valor;
     @Column(name = "desencolvedora", length = 50, nullable = false)
     private String desenvolvedora;
+
+
 
     public long getId() {
         return id;
@@ -42,12 +44,12 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public Double getPreco() {
-        return preco;
+    public Double getValor() {
+        return valor;
     }
 
-    public void setPreco(Double preco) {
-        this.preco = preco;
+    public void setValor(Double valor) {
+        this.valor = valor;
     }
 
     public String getDesenvolvedora() {

@@ -1,10 +1,14 @@
 package mjv.school.gameProject.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import javax.persistence.*;
 
-@Embeddable
-public class Endereco {
+@Entity
+@Table(name = "tab_endereco")
+public class EnderecoModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(name = "logradouro", length = 50, nullable = false)
     private String logradouro;
     @Column(name = "cep", length = 10, nullable = false)

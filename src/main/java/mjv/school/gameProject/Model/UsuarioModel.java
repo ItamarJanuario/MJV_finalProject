@@ -7,11 +7,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "tab_usuario")
-public class Usuario {
+public class UsuarioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "nome", length = 50, nullable = false)
     private String nome;
@@ -21,12 +21,13 @@ public class Usuario {
     private LocalDate dataRegistro;
     @Column(name = "email", length = 50, nullable = false)
     private String email;
-    @Embedded
-    private Endereco endereco;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "endereco_id")
+    private EnderecoModel endereco;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "usuario_id")
-    private List<Pedido> listaPedido = new ArrayList<>();
+    @JoinColumn(name = "pedido_id")
+    private List<PedidoModel> listaPedido = new ArrayList<>();
 
 
     public long getId() {
@@ -69,19 +70,19 @@ public class Usuario {
         this.email = email;
     }
 
-    public Endereco getEndereco() {
+    public EnderecoModel getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(EnderecoModel endereco) {
         this.endereco = endereco;
     }
 
-    public List<Pedido> getListaPedido() {
+    public List<PedidoModel> getListaPedido() {
         return listaPedido;
     }
 
-    public void setListaPedido(List<Pedido> listaPedido) {
+    public void setListaPedido(List<PedidoModel> listaPedido) {
         this.listaPedido = listaPedido;
     }
 }
