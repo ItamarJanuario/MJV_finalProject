@@ -1,4 +1,4 @@
-package mjv.school.gameProject.Enumeration;
+package mjv.school.gameProject.enumeration;
 
 public enum EnumStatusPedido {
     PENDENTE,

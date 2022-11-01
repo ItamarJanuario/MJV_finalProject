@@ -1,7 +1,6 @@
-package mjv.school.gameProject.Controller;
+package mjv.school.gameProject.controller;
 
-import mjv.school.gameProject.Repository.PedidoRepository;
-import mjv.school.gameProject.Service.PedidoService;
+import mjv.school.gameProject.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

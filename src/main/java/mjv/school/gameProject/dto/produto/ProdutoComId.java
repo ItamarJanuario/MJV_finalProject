@@ -1,30 +1,22 @@
-package mjv.school.gameProject.Model;
+package mjv.school.gameProject.dto.produto;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Entity
-@Table(name = "tab_produto")
-public class ProdutoModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProdutoComId {
     private Long id;
-    @Column(name = "nome", length = 50, nullable = false)
     private String nome;
-    @Column(name = "descricao", length = 125, nullable = false)
     private String descricao;
-
-    @Column(name = "valor", nullable = false)
     private Double valor;
-    @Column(name = "desencolvedora", length = 50, nullable = false)
     private String desenvolvedora;
 
-
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

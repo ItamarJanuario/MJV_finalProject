@@ -1,6 +1,6 @@
-package mjv.school.gameProject.Service;
+package mjv.school.gameProject.service;
 
-import mjv.school.gameProject.Repository.ProdutoRepository;
+import mjv.school.gameProject.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

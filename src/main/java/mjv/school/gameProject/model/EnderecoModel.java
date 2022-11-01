@@ -1,4 +1,4 @@
-package mjv.school.gameProject.Model;
+package mjv.school.gameProject.model;
 
 import javax.persistence.*;
 
@@ -19,11 +19,19 @@ public class EnderecoModel {
     private Integer numero;
     @Column(name = "bairro", length = 30, nullable = false)
     private String bairro;
-    @Column(name = "complemento", length = 50, nullable = false)
+    @Column(name = "complemento", length = 50)
     private String complemento;
     @Column(name = "pais", length = 30, nullable = false)
     private String pais;
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getLogradouro() {
         return logradouro;

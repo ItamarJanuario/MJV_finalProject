@@ -1,6 +1,6 @@
-package mjv.school.gameProject.Model;
+package mjv.school.gameProject.model;
 
-import mjv.school.gameProject.Enumeration.EnumStatusPedido;
+import mjv.school.gameProject.enumeration.EnumStatusPedido;
 
 import javax.persistence.*;
 import java.time.LocalDate;
