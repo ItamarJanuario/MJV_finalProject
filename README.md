@@ -6,7 +6,7 @@
 
 #### Descrição do projeto
 
-- Ecommerce de games focado em vendas de gaes digitais.
+- Ecommerce de games focado em vendas de games digitais.
 
 ##### Tecnologias
 
@@ -98,7 +98,7 @@
 }
 ```
 
-* Setando o pedido como entregue
+* Setando o pedido como confirmado
 
 
 ## License
