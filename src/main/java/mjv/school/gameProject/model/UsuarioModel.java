@@ -1,5 +1,7 @@
 package mjv.school.gameProject.model;
 
+import mjv.school.gameProject.service.EnderecoService;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -8,6 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "tab_usuario")
 public class UsuarioModel {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,13 +32,11 @@ public class UsuarioModel {
     @JoinColumn(name = "pedido_id")
     private List<PedidoModel> listaPedido = new ArrayList<>();
 
+    public UsuarioModel(){dataRegistro = LocalDate.now();}
 
-    public long getId() {
+
+    public Long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -68,6 +69,10 @@ public class UsuarioModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public EnderecoModel getEndereco() {

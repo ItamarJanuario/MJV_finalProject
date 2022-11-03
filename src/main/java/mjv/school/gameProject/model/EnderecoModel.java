@@ -24,6 +24,20 @@ public class EnderecoModel {
     @Column(name = "pais", length = 30, nullable = false)
     private String pais;
 
+    public EnderecoModel(String logradouro, String cep, String cidade, Integer numero, String bairro, String complemento, String pais) {
+        this.logradouro = logradouro;
+        this.cep = cep;
+        this.cidade = cidade;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.complemento = complemento;
+        this.pais = pais;
+    }
+
+
+    public EnderecoModel() {
+
+    }
 
     public Long getId() {
         return id;

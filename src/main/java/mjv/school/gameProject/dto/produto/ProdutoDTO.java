@@ -1,24 +1,10 @@
 package mjv.school.gameProject.dto.produto;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-public class ProdutoComId {
-    private Long id;
+public class ProdutoDTO {
     private String nome;
     private String descricao;
     private Double valor;
     private String desenvolvedora;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;

@@ -24,14 +24,15 @@ public class PedidoModel {
     private Double valorTotalCompra;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "produto_id")
-    private  List<ProdutoModel> listaProduto = new ArrayList<>();
+    @JoinColumn(name = "item_id")
+    private  List<PedidoItemModel> listaItem = new ArrayList<>();
 
-    public long getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -59,11 +60,11 @@ public class PedidoModel {
         this.statusPedido = statusPedido;
     }
 
-    public List<ProdutoModel> getListaProduto() {
-        return listaProduto;
+    public List<PedidoItemModel> getListaItem() {
+        return listaItem;
     }
 
-    public void setListaProduto(List<ProdutoModel> listaProduto) {
-        this.listaProduto = listaProduto;
+    public void setListaItem(List<PedidoItemModel> listaItem) {
+        this.listaItem = listaItem;
     }
 }

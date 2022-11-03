@@ -1,6 +1,9 @@
 package mjv.school.gameProject.dto.endereco;
 
-public class EnderecoSemId {
+import mjv.school.gameProject.model.EnderecoModel;
+
+public class EnderecoResponseDTO {
+    private Long id;
     private String logradouro;
     private String cep;
     private String cidade;
@@ -9,6 +12,29 @@ public class EnderecoSemId {
     private String complemento;
     private String pais;
 
+    public EnderecoResponseDTO () {
+
+    }
+
+    public EnderecoResponseDTO (EnderecoModel endereco) {
+        id = endereco.getId();
+        logradouro = endereco.getLogradouro();
+        cep = endereco.getCep();
+        cidade = endereco.getCidade();
+        numero = endereco.getNumero();
+        bairro = endereco.getBairro();
+        complemento = endereco.getComplemento();
+        pais = endereco. getPais();
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getLogradouro() {
         return logradouro;

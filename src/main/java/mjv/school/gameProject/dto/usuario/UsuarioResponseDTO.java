@@ -1,22 +1,32 @@
 package mjv.school.gameProject.dto.usuario;
 
-import mjv.school.gameProject.model.EnderecoModel;
-import mjv.school.gameProject.model.PedidoModel;
+import mjv.school.gameProject.dto.endereco.EnderecoResponseDTO;
+import mjv.school.gameProject.model.UsuarioModel;
 
-import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
-public class UsuarioComId {
-
+public class UsuarioResponseDTO {
     private Long id;
     private String nome;
     private String senha;
     private LocalDate dataRegistro;
-    private String email;
-    private EnderecoModel endereco;
-    private List<PedidoModel> listaPedido = new ArrayList<>();
+    private EnderecoResponseDTO endereco;
+
+    public UsuarioResponseDTO() {
+
+    }
+
+    public UsuarioResponseDTO(UsuarioModel usuario) {
+        id = usuario.getId();
+        nome = usuario.getNome();
+        senha = usuario.getSenha();
+        dataRegistro = usuario.getDataRegistro();
+
+        if (usuario.getEndereco() != null) {
+            endereco = new EnderecoResponseDTO(usuario.getEndereco());
+        }
+    }
+
 
     public Long getId() {
         return id;
@@ -50,27 +60,11 @@ public class UsuarioComId {
         this.dataRegistro = dataRegistro;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public EnderecoModel getEndereco() {
+    public EnderecoResponseDTO getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(EnderecoModel endereco) {
+    public void setEndereco(EnderecoResponseDTO endereco) {
         this.endereco = endereco;
-    }
-
-    public List<PedidoModel> getListaPedido() {
-        return listaPedido;
-    }
-
-    public void setListaPedido(List<PedidoModel> listaPedido) {
-        this.listaPedido = listaPedido;
     }
 }

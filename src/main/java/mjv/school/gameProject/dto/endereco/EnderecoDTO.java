@@ -1,11 +1,8 @@
 package mjv.school.gameProject.dto.endereco;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import mjv.school.gameProject.model.EnderecoModel;
 
-public class EnderecoComId {
+public class EnderecoDTO {
     private Long id;
     private String logradouro;
     private String cep;
@@ -15,13 +12,6 @@ public class EnderecoComId {
     private String complemento;
     private String pais;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getLogradouro() {
         return logradouro;

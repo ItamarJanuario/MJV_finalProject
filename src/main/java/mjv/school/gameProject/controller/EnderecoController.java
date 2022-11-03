@@ -1,10 +1,11 @@
 package mjv.school.gameProject.controller;
 
-import mjv.school.gameProject.dto.endereco.EnderecoComId;
-import mjv.school.gameProject.dto.endereco.EnderecoSemId;
+import mjv.school.gameProject.dto.endereco.EnderecoDTO;
 import mjv.school.gameProject.model.EnderecoModel;
 import mjv.school.gameProject.service.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,12 +22,13 @@ public class EnderecoController {
     }
 
     @PostMapping("/novo")
-    public void  insert(@RequestBody EnderecoSemId enderecoBody){
-         service.insert(enderecoBody);
+    public ResponseEntity<EnderecoModel>  insert(@RequestBody EnderecoDTO enderecoBody){
+        EnderecoModel endereco = service.insert(enderecoBody);
+        return new ResponseEntity<>(endereco, HttpStatus.CREATED);
     }
 
     @PatchMapping("/{id}/atualizar")
-    public void update(@PathVariable(name = "id")Long id, @RequestBody EnderecoComId enderecoBody) {
+    public void update(@PathVariable(name = "id")Long id, @RequestBody EnderecoDTO enderecoBody) {
        service.update(id, enderecoBody);
     }
 

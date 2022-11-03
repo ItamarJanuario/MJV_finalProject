@@ -1,11 +1,12 @@
-package mjv.school.gameProject;
+package mjv.school.gameProject.verification;
 
+import mjv.school.gameProject.dto.endereco.EnderecoDTO;
 import mjv.school.gameProject.model.EnderecoModel;
 
-public class Verifications {
+public class VerificationsEndereco {
 
     //verificando e passando para DTO
-    public static void verificaNull(EnderecoModel enderecoDto, EnderecoModel endereco){
+    public static void verificaEndereco(EnderecoDTO enderecoDto, EnderecoModel endereco){
 
             if(enderecoDto.getLogradouro() != null) {
                 endereco.setLogradouro(enderecoDto.getLogradouro());
