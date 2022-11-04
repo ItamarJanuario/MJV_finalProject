@@ -36,7 +36,6 @@
 2. Cadastro de Endereço
 3. Cadastro de Produtos
 4. cadastro de pedidos
-5. Demonstração consumindo a API
 
 ##### JSON Cadastros
 
